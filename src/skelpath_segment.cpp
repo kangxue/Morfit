@@ -527,7 +527,7 @@ void skelpath::drawBrchesInDiffColor( GLColor skelColor){
 		initialized = true ;
 
 
-		if( appstate.displayProfileConfidence ){
+		if( 0){
 
 			// draw points
 			glDisable(GL_LIGHTING) ;

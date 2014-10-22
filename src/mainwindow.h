@@ -61,7 +61,7 @@ private slots:
 
 	void showSkeletonConfidence(bool) ;
 
-	void showProfileConfidence(bool) ;
+	void showPoints(bool) ;
 
 	void showCullFace(bool) ;
 

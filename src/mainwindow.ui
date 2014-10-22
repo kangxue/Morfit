@@ -77,13 +77,13 @@
      <string>render</string>
     </property>
     <addaction name="actionShow_cutRadii"/>
+    <addaction name="actionShow_points"/>
+    <addaction name="actionShow_skeleton"/>
     <addaction name="actionShow_trajectory_2"/>
     <addaction name="actionShow_seedProfile"/>
-    <addaction name="actionShow_skeleton"/>
     <addaction name="actionShow_mesh"/>
     <addaction name="actionShow_resultProfile"/>
     <addaction name="actionShow_skeletonConfidence"/>
-    <addaction name="actionShow_profileConfidence"/>
     <addaction name="actionShow_cullFace"/>
     <addaction name="actionShow_meshVertOnly"/>
     <addaction name="actionShow_settings"/>
@@ -161,7 +161,7 @@
   </action>
   <action name="actionSave_Ply">
    <property name="icon">
-    <iconset resource="mainwindow.qrc">
+    <iconset>
      <normaloff>:/mainwindow/Icons/save.png</normaloff>:/mainwindow/Icons/save.png</iconset>
    </property>
    <property name="text">
@@ -244,7 +244,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="mainwindow.qrc">
+    <iconset>
      <normaloff>:/mainwindow/Icons/lighton.png</normaloff>:/mainwindow/Icons/lighton.png</iconset>
    </property>
    <property name="text">
@@ -796,15 +796,15 @@
     <string>6</string>
    </property>
   </action>
-  <action name="actionShow_profileConfidence">
+  <action name="actionShow_points">
    <property name="checkable">
     <bool>true</bool>
    </property>
    <property name="checked">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="text">
-    <string>show profileConfidence</string>
+    <string>show points</string>
    </property>
    <property name="shortcut">
     <string>7</string>
@@ -857,7 +857,7 @@
     <bool>true</bool>
    </property>
    <property name="checked">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
    <property name="text">
     <string>show trajectory</string>
@@ -939,7 +939,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="mainwindow.qrc">
+    <iconset>
      <normaloff>:/mainwindow/Icons/gowalla_128x128-32.png</normaloff>:/mainwindow/Icons/gowalla_128x128-32.png</iconset>
    </property>
    <property name="text">
@@ -951,7 +951,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="mainwindow.qrc">
+    <iconset>
      <normaloff>:/mainwindow/Icons/select_face.png</normaloff>:/mainwindow/Icons/select_face.png</iconset>
    </property>
    <property name="text">
@@ -963,7 +963,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="mainwindow.qrc">
+    <iconset>
      <normaloff>:/mainwindow/Icons/heyzap_128x128-32.png</normaloff>:/mainwindow/Icons/heyzap_128x128-32.png</iconset>
    </property>
    <property name="text">
@@ -978,7 +978,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset resource="mainwindow.qrc">
+    <iconset>
      <normaloff>:/mainwindow/Icons/edgecollapse.png</normaloff>:/mainwindow/Icons/edgecollapse.png</iconset>
    </property>
    <property name="text">
@@ -990,7 +990,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="mainwindow.qrc">
+    <iconset>
      <normaloff>:/mainwindow/Icons/color_red_ggr.png</normaloff>:/mainwindow/Icons/color_red_ggr.png</iconset>
    </property>
    <property name="text">
@@ -1002,7 +1002,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="mainwindow.qrc">
+    <iconset>
      <normaloff>:/mainwindow/Icons/selected.png</normaloff>:/mainwindow/Icons/selected.png</iconset>
    </property>
    <property name="text">
@@ -1014,7 +1014,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="mainwindow.qrc">
+    <iconset>
      <normaloff>:/mainwindow/Icons/smooth.png</normaloff>:/mainwindow/Icons/smooth.png</iconset>
    </property>
    <property name="text">
@@ -1026,7 +1026,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="mainwindow.qrc">
+    <iconset>
      <normaloff>:/mainwindow/Icons/triangle.png</normaloff>:/mainwindow/Icons/triangle.png</iconset>
    </property>
    <property name="text">
@@ -1038,7 +1038,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="mainwindow.qrc">
+    <iconset>
      <normaloff>:/mainwindow/Icons/edgesplit.png</normaloff>:/mainwindow/Icons/edgesplit.png</iconset>
    </property>
    <property name="text">
@@ -1050,7 +1050,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="mainwindow.qrc">
+    <iconset>
      <normaloff>:/mainwindow/Icons/settings_128x128-32.png</normaloff>:/mainwindow/Icons/settings_128x128-32.png</iconset>
    </property>
    <property name="text">
@@ -1059,7 +1059,7 @@
   </action>
   <action name="actionShow_cutRadii_2">
    <property name="icon">
-    <iconset resource="mainwindow.qrc">
+    <iconset>
      <normaloff>:/mainwindow/Icons/vertex.png</normaloff>:/mainwindow/Icons/vertex.png</iconset>
    </property>
    <property name="text">

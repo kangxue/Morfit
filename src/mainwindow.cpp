@@ -102,7 +102,7 @@ void MainWindow::initConnect()
 	connect(ui.actionShow_mesh,SIGNAL(toggled(bool)),this,SLOT(showMesh(bool)));
 	connect(ui.actionShow_resultProfile,SIGNAL(toggled(bool)),this,SLOT(showResultProfile(bool)));
 	connect(ui.actionShow_skeletonConfidence,SIGNAL(toggled(bool)),this,SLOT(showSkeletonConfidence(bool)));
-	connect(ui.actionShow_profileConfidence,SIGNAL(toggled(bool)),this,SLOT(showProfileConfidence(bool)));
+	connect(ui.actionShow_points,SIGNAL(toggled(bool)),this,SLOT(showPoints(bool)));
 	connect(ui.actionShow_cullFace,SIGNAL(toggled(bool)),this,SLOT(showCullFace(bool)));
 	connect(ui.actionShow_meshVertOnly,SIGNAL(toggled(bool)),this,SLOT(showMeshVertOnly(bool)));
 	connect(ui.actionShow_settings,SIGNAL(toggled(bool)),this,SLOT(showSettings(bool)));
@@ -387,10 +387,10 @@ void MainWindow::showSkeletonConfidence(bool val) {
 }
 
 
-void MainWindow::showProfileConfidence(bool val) {
+void MainWindow::showPoints(bool val) {
 
 	extern AppState appstate ;
-	appstate.displayProfileConfidence = val ;
+	appstate.displayPoints = val ;
 }
 
 

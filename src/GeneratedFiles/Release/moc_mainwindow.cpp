@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[35];
-    char stringdata[446];
+    char stringdata[435];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -45,32 +45,32 @@ QT_MOC_LITERAL(12, 138, 12),
 QT_MOC_LITERAL(13, 151, 8),
 QT_MOC_LITERAL(14, 160, 17),
 QT_MOC_LITERAL(15, 178, 22),
-QT_MOC_LITERAL(16, 201, 21),
-QT_MOC_LITERAL(17, 223, 12),
-QT_MOC_LITERAL(18, 236, 16),
-QT_MOC_LITERAL(19, 253, 12),
-QT_MOC_LITERAL(20, 266, 17),
-QT_MOC_LITERAL(21, 284, 12),
-QT_MOC_LITERAL(22, 297, 9),
-QT_MOC_LITERAL(23, 307, 9),
-QT_MOC_LITERAL(24, 317, 11),
-QT_MOC_LITERAL(25, 329, 11),
-QT_MOC_LITERAL(26, 341, 11),
-QT_MOC_LITERAL(27, 353, 9),
-QT_MOC_LITERAL(28, 363, 9),
-QT_MOC_LITERAL(29, 373, 14),
-QT_MOC_LITERAL(30, 388, 13),
-QT_MOC_LITERAL(31, 402, 13),
-QT_MOC_LITERAL(32, 416, 15),
-QT_MOC_LITERAL(33, 432, 10),
-QT_MOC_LITERAL(34, 443, 1)
+QT_MOC_LITERAL(16, 201, 10),
+QT_MOC_LITERAL(17, 212, 12),
+QT_MOC_LITERAL(18, 225, 16),
+QT_MOC_LITERAL(19, 242, 12),
+QT_MOC_LITERAL(20, 255, 17),
+QT_MOC_LITERAL(21, 273, 12),
+QT_MOC_LITERAL(22, 286, 9),
+QT_MOC_LITERAL(23, 296, 9),
+QT_MOC_LITERAL(24, 306, 11),
+QT_MOC_LITERAL(25, 318, 11),
+QT_MOC_LITERAL(26, 330, 11),
+QT_MOC_LITERAL(27, 342, 9),
+QT_MOC_LITERAL(28, 352, 9),
+QT_MOC_LITERAL(29, 362, 14),
+QT_MOC_LITERAL(30, 377, 13),
+QT_MOC_LITERAL(31, 391, 13),
+QT_MOC_LITERAL(32, 405, 15),
+QT_MOC_LITERAL(33, 421, 10),
+QT_MOC_LITERAL(34, 432, 1)
     },
     "MainWindow\0updateStatusBar\0\0openFile\0"
     "saveFile\0clearData\0normalizeData\0"
     "saveSnapshot\0showConfig\0showCutRadii\0"
     "showTrajectory\0showSeedProfile\0"
     "showSkeleton\0showMesh\0showResultProfile\0"
-    "showSkeletonConfidence\0showProfileConfidence\0"
+    "showSkeletonConfidence\0showPoints\0"
     "showCullFace\0showMeshVertOnly\0"
     "showSettings\0showControlPoints\0"
     "skelRecenter\0undoOp_zc\0redoOp_zc\0"
@@ -182,7 +182,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 11: _t->showMesh((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 12: _t->showResultProfile((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 13: _t->showSkeletonConfidence((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 14: _t->showProfileConfidence((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 14: _t->showPoints((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 15: _t->showCullFace((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 16: _t->showMeshVertOnly((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 17: _t->showSettings((*reinterpret_cast< bool(*)>(_a[1]))); break;

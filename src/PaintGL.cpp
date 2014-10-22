@@ -217,43 +217,13 @@ void GLArea::paintGL()
 #endif
 
 		//// draw points
-		//bindShader("Oren-Nayar") ;
-		//glDrawer.drawPolygonOnScreen( dataMgr.getCurrentOriginal(), global_paraMgr.drawer.getDouble("Original Dot Size")*0.02  * (takeSnapTile?0.25:1), 4 ) ;
-		//releaseShader() ;
-
-		////added by huajie
-		//	drawPoints( dsts, GLColor(255,0,0), 10 );
-		//	drawPoints( fraAroundTip, GLColor(0,0,255), 3 );
-		//	drawPoints(centerOfGravitys,GLColor(0,255,255),10);
-		//	drawPoints(centerTip,GLColor(255,0,0),15);
-		//	glLineWidth(2) ;
-		//	for(int i=0; i<fraAroundTip.size(); i++){
-		//		glColor4f(0,1,0, 1 ) ;
-		//		glBegin( GL_LINES ) ;
-		//		glVertex3f( fraAroundTip[i].X(), fraAroundTip[i].Y(), fraAroundTip[i].Z() ) ;
-		//		glVertex3f( fraAroundTip[i].X() + 0.01*allNmls[i].X(), fraAroundTip[i].Y() + 0.01*allNmls[i].Y(), fraAroundTip[i].Z() + 0.01*allNmls[i].Z() ) ;
-		//		glEnd() ;
-		//		glPointSize(5);
-		//		glColor4f(1,0,0, 1 ) ;
-		//		glBegin(GL_POINTS); 
-		//		glVertex3f( fraAroundTip[i].X() + 0.01*allNmls[i].X(), fraAroundTip[i].Y() + 0.01*allNmls[i].Y(), fraAroundTip[i].Z() + 0.01*allNmls[i].Z() ) ;
-		//		glEnd();
-		//	}
-		//	drawPoints(edges,GLColor(255,0,0),20);
-
-		//// draw curves
-		//for( int i=0; i<greenCurves.size(); ++i )
-		//	GlobalFun::draw2dCurveOnScreen( greenCurves[i], double3(0,1,0) ,6,false ) ;
-		//for( int i=0; i<blueCurves.size(); ++i )
-		//	GlobalFun::draw2dCurveOnScreen( blueCurves[i],  double3(0,0.5,1) ,6,false ) ;
-
 
 
 		if( (get_operating_state()!=onesweepReady && get_operating_state()!=onesweepUpdateResult) ||  
 			(get_operating_state()==onesweepReady&&dataMgr.swp.ongoingSkel.activeTmpId < 0) || 
 			(get_operating_state()==onesweepUpdateResult&&dataMgr.swp.ctrlSkelId<0) ){
 
-			if( 0 || !appstate.displayProfileConfidence ){
+			if( appstate.displayPoints ){
 
 				std::vector<Point3f> pset1, pset2 ;
 				for( int i=0; i<dataMgr.swp.points.size(); ++i )
@@ -268,16 +238,9 @@ void GLArea::paintGL()
 				else
 					drawPoints(pset2, GLColor(0,0.1,0), global_paraMgr.drawer.getDouble("Original Dot Size")  * 3 ) ;
 
-			}else if( dataMgr.swp.ongoingSkel.profiles2d.size()==1){
-				//std::vector<Profile3D> profs3d =  dataMgr.swp.ongoingSkel.profiles3d[0] ;
-				//std::vector<double> profconf =  dataMgr.swp.ongoingSkel.profile_conf[0] ;
-				//for( int i=0; i<profs3d.size(); ++i ){
-				//	double3 color = GlobalFun::scalar2color(1.0 - profconf[i]) ;
-				//	drawPoints(profs3d[i], GLColor(color.x, color.y, color.z),global_paraMgr.drawer.getDouble("Original Dot Size")  ) ;
-				//}
 			}
 
-		}else if(get_operating_state()==onesweepReady&&dataMgr.swp.ongoingSkel.activeTmpId>=0){
+		}else if(get_operating_state()==onesweepReady&&dataMgr.swp.ongoingSkel.activeTmpId>=0 && appstate.displayPoints ){
 
 			glDisable( GL_LIGHTING) ;
 
@@ -302,10 +265,9 @@ void GLArea::paintGL()
 				}
 			}
 
-			if( !appstate.displayProfileConfidence )
-				drawPoints(dataMgr.swp.points, GLColor(0,0,0), 1) ;
+			drawPoints(dataMgr.swp.points, GLColor(0,0,0), 1) ;
 
-		}else if(get_operating_state()==onesweepUpdateResult&&dataMgr.swp.ctrlSkelId>=0 &&  !appstate.displayProfileConfidence ){
+		}else if(get_operating_state()==onesweepUpdateResult&&dataMgr.swp.ctrlSkelId>=0  && appstate.displayPoints){
 			glDisable( GL_LIGHTING) ;
 			skelpath &skeltoprint = dataMgr.swp.settings[dataMgr.swp.ctrlSkelId] ;
 			for( int i=0; i<skeltoprint.profiles3d[0].size(); ++i ){

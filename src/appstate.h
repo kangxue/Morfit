@@ -36,6 +36,7 @@ public:
 	AppState(){
 		//   default states
 		displayCutRadii = false ;
+		displayPoints = true ;
 		displayControlPoints = false ;
 		display3dJoints = true ;
 		displayJoint = true ;
@@ -45,7 +46,6 @@ public:
 		displaySkeleton = true;   
 		displayMesh = true;      
 		displayResultProfile = false ;
-		displayProfileConfidence = false ;
 		displaySkeletonConfidence = false ;
 		cullFace = false ;
 		displayMeshVertOnly = false ;
@@ -83,7 +83,7 @@ public:
 	bool displayMesh;                   // 4
 	bool displayResultProfile;          // 5
 	bool displaySkeletonConfidence;     // 6
-	bool displayProfileConfidence;      // 7
+	bool displayPoints;					// 7
 	bool cullFace;					    // 8
 	bool displayMeshVertOnly;		    // 9
 

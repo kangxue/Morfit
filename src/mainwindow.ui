@@ -1,0 +1,1075 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainwindowClass</class>
+ <widget class="QMainWindow" name="mainwindowClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1008</width>
+    <height>824</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>55</width>
+    <height>55</height>
+   </size>
+  </property>
+  <property name="sizeIncrement">
+   <size>
+    <width>5</width>
+    <height>5</height>
+   </size>
+  </property>
+  <property name="baseSize">
+   <size>
+    <width>1</width>
+    <height>1</height>
+   </size>
+  </property>
+  <property name="acceptDrops">
+   <bool>true</bool>
+  </property>
+  <property name="windowTitle">
+   <string>Morfit</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>Icons/morfit.png</normaloff>Icons/morfit.png</iconset>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>36</width>
+    <height>36</height>
+   </size>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1008</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionImport_Ply"/>
+    <addaction name="actionSave_Skel"/>
+   </widget>
+   <widget class="QMenu" name="menuRender">
+    <property name="title">
+     <string>render</string>
+    </property>
+    <addaction name="actionShow_cutRadii"/>
+    <addaction name="actionShow_trajectory_2"/>
+    <addaction name="actionShow_seedProfile"/>
+    <addaction name="actionShow_skeleton"/>
+    <addaction name="actionShow_mesh"/>
+    <addaction name="actionShow_resultProfile"/>
+    <addaction name="actionShow_skeletonConfidence"/>
+    <addaction name="actionShow_profileConfidence"/>
+    <addaction name="actionShow_cullFace"/>
+    <addaction name="actionShow_meshVertOnly"/>
+    <addaction name="actionShow_settings"/>
+   </widget>
+   <widget class="QMenu" name="menuOperations">
+    <property name="title">
+     <string>operations</string>
+    </property>
+    <addaction name="actionEditMode"/>
+    <addaction name="actionUndo"/>
+    <addaction name="actionRedo"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuRender"/>
+   <addaction name="menuOperations"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="baseSize">
+    <size>
+     <width>11</width>
+     <height>11</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonIconOnly</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionImport_Ply"/>
+   <addaction name="actionSnapShot_2"/>
+   <addaction name="actionSave_Skel"/>
+   <addaction name="separator"/>
+   <addaction name="actionSave_og_nbs"/>
+   <addaction name="actionLoad_og_nbs"/>
+   <addaction name="separator"/>
+   <addaction name="actionSave_mesh"/>
+   <addaction name="actionLoad_mesh"/>
+   <addaction name="actionSave_brch_mesh"/>
+   <addaction name="separator"/>
+   <addaction name="actionSave_settings"/>
+   <addaction name="actionLoad_settings"/>
+   <addaction name="separator"/>
+   <addaction name="actionRecenter"/>
+   <addaction name="separator"/>
+   <addaction name="actionConfig"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+  </widget>
+  <action name="actionImport_Ply">
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/mainwindow/Icons/open.png</normaloff>:/mainwindow/Icons/open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Import Ply+Skel</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::WidgetShortcut</enum>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::TextHeuristicRole</enum>
+   </property>
+  </action>
+  <action name="actionSave_Ply">
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/mainwindow/Icons/save.png</normaloff>:/mainwindow/Icons/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save Ply</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionShow_Samples">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show Samples</string>
+   </property>
+  </action>
+  <action name="actionShow_Original">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show Original Points</string>
+   </property>
+  </action>
+  <action name="actionShow_Neighborhood_Ball">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show Radius</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+R</string>
+   </property>
+  </action>
+  <action name="actionCull_Points">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Cull Points</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
+  </action>
+  <action name="actionSample_Color">
+   <property name="text">
+    <string>Sample Color</string>
+   </property>
+  </action>
+  <action name="actionOriginal_Color">
+   <property name="text">
+    <string>Original Color</string>
+   </property>
+  </action>
+  <action name="actionBackground_Color">
+   <property name="text">
+    <string>Background Color</string>
+   </property>
+  </action>
+  <action name="actionAmbient_Color">
+   <property name="text">
+    <string>Ambient Color</string>
+   </property>
+  </action>
+  <action name="actionDiffuse_Color">
+   <property name="text">
+    <string>Diffuse Color</string>
+   </property>
+  </action>
+  <action name="actionSpecular_Color">
+   <property name="text">
+    <string>Specular Color</string>
+   </property>
+  </action>
+  <action name="actionLight_On_Off">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/mainwindow/Icons/lighton.png</normaloff>:/mainwindow/Icons/lighton.png</iconset>
+   </property>
+   <property name="text">
+    <string>Light On/Off</string>
+   </property>
+  </action>
+  <action name="actionInitial_Sampling">
+   <property name="text">
+    <string>Initial Sampling</string>
+   </property>
+  </action>
+  <action name="actionNormalize">
+   <property name="text">
+    <string>Normalize</string>
+   </property>
+  </action>
+  <action name="actionDownSample">
+   <property name="text">
+    <string>DownSample</string>
+   </property>
+  </action>
+  <action name="actionSubSample">
+   <property name="text">
+    <string>SubSample</string>
+   </property>
+  </action>
+  <action name="actionSnapShot">
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/mainwindow/Icons/125.png</normaloff>:/mainwindow/Icons/125.png</iconset>
+   </property>
+   <property name="text">
+    <string>ScreenShot</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionShow_Normals">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show Normals</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N, Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionFeature_Color">
+   <property name="text">
+    <string>Feature Color</string>
+   </property>
+  </action>
+  <action name="actionNormal_Color">
+   <property name="text">
+    <string>Normal Color</string>
+   </property>
+  </action>
+  <action name="actionWLOP_2">
+   <property name="text">
+    <string>Skeletonization</string>
+   </property>
+  </action>
+  <action name="actionRun_Wlop">
+   <property name="text">
+    <string>Run WLOP</string>
+   </property>
+  </action>
+  <action name="actionWLOP_Setting">
+   <property name="text">
+    <string>WLOP Setting</string>
+   </property>
+  </action>
+  <action name="actionRun_PCA">
+   <property name="text">
+    <string>Run PCA</string>
+   </property>
+  </action>
+  <action name="actionNormal_Setting">
+   <property name="text">
+    <string>Normal Setting</string>
+   </property>
+  </action>
+  <action name="actionReorientate">
+   <property name="text">
+    <string>Reorientate</string>
+   </property>
+  </action>
+  <action name="actionQuad">
+   <property name="text">
+    <string>Quad</string>
+   </property>
+  </action>
+  <action name="actionDot">
+   <property name="text">
+    <string>Dot</string>
+   </property>
+  </action>
+  <action name="actionCircle">
+   <property name="text">
+    <string>Circle</string>
+   </property>
+  </action>
+  <action name="actionQuad_2">
+   <property name="text">
+    <string>Quad</string>
+   </property>
+  </action>
+  <action name="actionDot_2">
+   <property name="text">
+    <string>Dot</string>
+   </property>
+  </action>
+  <action name="actionCircle_2">
+   <property name="text">
+    <string>Circle</string>
+   </property>
+  </action>
+  <action name="actionInitial_Sampling_2">
+   <property name="text">
+    <string>Initialization</string>
+   </property>
+  </action>
+  <action name="actionAuto_Play">
+   <property name="text">
+    <string>Auto Play</string>
+   </property>
+  </action>
+  <action name="actionStop">
+   <property name="text">
+    <string>Stop</string>
+   </property>
+  </action>
+  <action name="actionStep">
+   <property name="text">
+    <string>Step</string>
+   </property>
+  </action>
+  <action name="actionJump">
+   <property name="text">
+    <string>Jump</string>
+   </property>
+  </action>
+  <action name="actionSkeleton_Setting">
+   <property name="text">
+    <string>Skeleton Setting</string>
+   </property>
+  </action>
+  <action name="actionUpsample_Setting">
+   <property name="text">
+    <string>Upsample Setting</string>
+   </property>
+  </action>
+  <action name="actionClear_Data">
+   <property name="text">
+    <string>Clear data</string>
+   </property>
+  </action>
+  <action name="actionFff">
+   <property name="text">
+    <string>fff</string>
+   </property>
+  </action>
+  <action name="actionShow_Normal_diff">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show Normal diff</string>
+   </property>
+  </action>
+  <action name="actionShow_Vectors">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show Vectors</string>
+   </property>
+  </action>
+  <action name="actionShow_Tangent">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show Tangent</string>
+   </property>
+  </action>
+  <action name="actionLasso">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>Icons/lasso.png</normaloff>Icons/lasso.png</iconset>
+   </property>
+   <property name="text">
+    <string>lasso</string>
+   </property>
+   <property name="shortcut">
+    <string>L</string>
+   </property>
+  </action>
+  <action name="actionSnap">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>Icons/SnapIcon1.png</normaloff>Icons/SnapIcon1.png</iconset>
+   </property>
+   <property name="text">
+    <string>snap</string>
+   </property>
+   <property name="shortcut">
+    <string>S</string>
+   </property>
+  </action>
+  <action name="actionCut">
+   <property name="icon">
+    <iconset>
+     <normaloff>Icons/cut.png</normaloff>Icons/cut.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cut</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::WindowShortcut</enum>
+   </property>
+  </action>
+  <action name="actionCopy">
+   <property name="icon">
+    <iconset>
+     <normaloff>Icons/copy.png</normaloff>Icons/copy.png</iconset>
+   </property>
+   <property name="text">
+    <string>Copy</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionPaste">
+   <property name="icon">
+    <iconset>
+     <normaloff>Icons/paste.png</normaloff>Icons/paste.png</iconset>
+   </property>
+   <property name="text">
+    <string>Paste</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="actionRender_sample_as_disk">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Render Sample Disks</string>
+   </property>
+  </action>
+  <action name="actionRender_Sample_Points">
+   <property name="text">
+    <string>Render Sample Points</string>
+   </property>
+  </action>
+  <action name="actionShow_cutRadii">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>show cutRadii</string>
+   </property>
+  </action>
+  <action name="actionOutputProfilesAsImage">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>outputProfilesAsImage</string>
+   </property>
+  </action>
+  <action name="actionSolve_transfomr">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>solve transform</string>
+   </property>
+  </action>
+  <action name="actionShow_Samples_2">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>show reconstruction</string>
+   </property>
+  </action>
+  <action name="actionShow_Original_2">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>show original</string>
+   </property>
+  </action>
+  <action name="actionEditMode">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>EditSkel</string>
+   </property>
+   <property name="shortcut">
+    <string>E</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
+  </action>
+  <action name="actionSave_Skel">
+   <property name="icon">
+    <iconset>
+     <normaloff>Icons/skel.png</normaloff>Icons/skel.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save_Skel</string>
+   </property>
+  </action>
+  <action name="actionUndo">
+   <property name="text">
+    <string>Undo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
+  </action>
+  <action name="actionRedo">
+   <property name="text">
+    <string>Redo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Y</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
+  </action>
+  <action name="actionEditProfile">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>EditProfile</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
+  </action>
+  <action name="actionShowCv">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>showCv</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
+  </action>
+  <action name="actionSegment">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>segment</string>
+   </property>
+   <property name="iconText">
+    <string>segmentBranch</string>
+   </property>
+  </action>
+  <action name="actionInitSegment">
+   <property name="text">
+    <string>initSegment</string>
+   </property>
+  </action>
+  <action name="actionRecenter">
+   <property name="text">
+    <string>recenter skel</string>
+   </property>
+  </action>
+  <action name="actionShow3dtemplates">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>show3dtemplates</string>
+   </property>
+  </action>
+  <action name="actionGet3dTemplates">
+   <property name="text">
+    <string>get3dTemplates</string>
+   </property>
+  </action>
+  <action name="actionGet3dJoints">
+   <property name="text">
+    <string>get3dJoints</string>
+   </property>
+  </action>
+  <action name="actionShow3dJoints">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>show3dJoints</string>
+   </property>
+  </action>
+  <action name="actionSnapTips">
+   <property name="text">
+    <string>snapTips</string>
+   </property>
+  </action>
+  <action name="actionUpdateSurface">
+   <property name="text">
+    <string>update surface</string>
+   </property>
+  </action>
+  <action name="actionShow_trajectory">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>show trajectory</string>
+   </property>
+  </action>
+  <action name="actionSave_og_nbs">
+   <property name="text">
+    <string>save og nbs</string>
+   </property>
+  </action>
+  <action name="actionLoad_og_nbs">
+   <property name="text">
+    <string>load og nbs</string>
+   </property>
+   <property name="shortcut">
+    <string>[</string>
+   </property>
+  </action>
+  <action name="actionSave_mesh">
+   <property name="text">
+    <string>save mesh</string>
+   </property>
+  </action>
+  <action name="actionLoad_mesh">
+   <property name="text">
+    <string>load mesh</string>
+   </property>
+  </action>
+  <action name="actionSave_brch_mesh">
+   <property name="text">
+    <string>save brch mesh</string>
+   </property>
+  </action>
+  <action name="actionSave_settings">
+   <property name="text">
+    <string>save settings</string>
+   </property>
+  </action>
+  <action name="actionLoad_settings">
+   <property name="text">
+    <string>load settings</string>
+   </property>
+   <property name="shortcut">
+    <string>]</string>
+   </property>
+  </action>
+  <action name="actionVideoMode">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>videoMode</string>
+   </property>
+  </action>
+  <action name="actionCameraRotate">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>cameraRotate</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionSnapShot_2">
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/mainwindow/Icons/125.png</normaloff>:/mainwindow/Icons/125.png</iconset>
+   </property>
+   <property name="text">
+    <string>snapshot</string>
+   </property>
+  </action>
+  <action name="actionSweepingAnimation">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>sweepingAnimation</string>
+   </property>
+  </action>
+  <action name="actionShow_skeletonConfidence">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>show skeletonConfidence</string>
+   </property>
+   <property name="shortcut">
+    <string>6</string>
+   </property>
+  </action>
+  <action name="actionShow_profileConfidence">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>show profileConfidence</string>
+   </property>
+   <property name="shortcut">
+    <string>7</string>
+   </property>
+  </action>
+  <action name="actionShow_cullFace">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>cullFace</string>
+   </property>
+   <property name="shortcut">
+    <string>8</string>
+   </property>
+  </action>
+  <action name="actionShow_meshVertOnly">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>show meshVertOnly</string>
+   </property>
+   <property name="shortcut">
+    <string>9</string>
+   </property>
+  </action>
+  <action name="actionShow_settings">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>show settings</string>
+   </property>
+   <property name="shortcut">
+    <string>0</string>
+   </property>
+  </action>
+  <action name="actionShow_trajectory_2">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>show trajectory</string>
+   </property>
+   <property name="shortcut">
+    <string>1</string>
+   </property>
+  </action>
+  <action name="actionShow_seedProfile">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>show seedProfile</string>
+   </property>
+   <property name="shortcut">
+    <string>2</string>
+   </property>
+  </action>
+  <action name="actionShow_skeleton">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>show skeleton</string>
+   </property>
+   <property name="shortcut">
+    <string>3</string>
+   </property>
+  </action>
+  <action name="actionShow_mesh">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>show mesh</string>
+   </property>
+   <property name="shortcut">
+    <string>4</string>
+   </property>
+  </action>
+  <action name="actionShow_resultProfile">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>show resultProfile</string>
+   </property>
+   <property name="shortcut">
+    <string>5</string>
+   </property>
+  </action>
+  <action name="actionConfig">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>Icons/Parameters-512.png</normaloff>Icons/Parameters-512.png</iconset>
+   </property>
+   <property name="text">
+    <string>config</string>
+   </property>
+  </action>
+  <action name="actionShow_trajectory_3">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/mainwindow/Icons/gowalla_128x128-32.png</normaloff>:/mainwindow/Icons/gowalla_128x128-32.png</iconset>
+   </property>
+   <property name="text">
+    <string>show trajectory</string>
+   </property>
+  </action>
+  <action name="actionShow_seedProfile_2">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/mainwindow/Icons/select_face.png</normaloff>:/mainwindow/Icons/select_face.png</iconset>
+   </property>
+   <property name="text">
+    <string>show seedProfile</string>
+   </property>
+  </action>
+  <action name="actionShow_skeleton_2">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/mainwindow/Icons/heyzap_128x128-32.png</normaloff>:/mainwindow/Icons/heyzap_128x128-32.png</iconset>
+   </property>
+   <property name="text">
+    <string>show skeleton</string>
+   </property>
+  </action>
+  <action name="actionShow_mesh_2">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/mainwindow/Icons/edgecollapse.png</normaloff>:/mainwindow/Icons/edgecollapse.png</iconset>
+   </property>
+   <property name="text">
+    <string>show mesh</string>
+   </property>
+  </action>
+  <action name="actionShow_resultProfile_2">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/mainwindow/Icons/color_red_ggr.png</normaloff>:/mainwindow/Icons/color_red_ggr.png</iconset>
+   </property>
+   <property name="text">
+    <string>show resultProfile</string>
+   </property>
+  </action>
+  <action name="actionShow_skeletonConfidence_2">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/mainwindow/Icons/selected.png</normaloff>:/mainwindow/Icons/selected.png</iconset>
+   </property>
+   <property name="text">
+    <string>show skeletonConfidence</string>
+   </property>
+  </action>
+  <action name="actionShow_profileConfidence_2">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/mainwindow/Icons/smooth.png</normaloff>:/mainwindow/Icons/smooth.png</iconset>
+   </property>
+   <property name="text">
+    <string>show profileConfidence</string>
+   </property>
+  </action>
+  <action name="actionShow_cullFace_2">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/mainwindow/Icons/triangle.png</normaloff>:/mainwindow/Icons/triangle.png</iconset>
+   </property>
+   <property name="text">
+    <string>show cullFace</string>
+   </property>
+  </action>
+  <action name="actionShow_meshVertOnly_2">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/mainwindow/Icons/edgesplit.png</normaloff>:/mainwindow/Icons/edgesplit.png</iconset>
+   </property>
+   <property name="text">
+    <string>show meshVertOnly</string>
+   </property>
+  </action>
+  <action name="actionShow_settings_2">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/mainwindow/Icons/settings_128x128-32.png</normaloff>:/mainwindow/Icons/settings_128x128-32.png</iconset>
+   </property>
+   <property name="text">
+    <string>show settings</string>
+   </property>
+  </action>
+  <action name="actionShow_cutRadii_2">
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/mainwindow/Icons/vertex.png</normaloff>:/mainwindow/Icons/vertex.png</iconset>
+   </property>
+   <property name="text">
+    <string>show cutRadii</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="mainwindow.qrc"/>
+ </resources>
+ <connections/>
+</ui>

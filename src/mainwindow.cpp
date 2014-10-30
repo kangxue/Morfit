@@ -75,6 +75,14 @@ void MainWindow::initWidgets()
 	ui.actionCull_Points->setChecked(global_paraMgr.drawer.getBool("Need Cull Points"));
 }
 
+void MainWindow::flipEditMode(bool checked)
+{
+	if( checked )
+		area->set_operating_state(skelEditState);
+	else
+		area->set_operating_state(startState);
+}
+
 void MainWindow::initConnect()
 {
 	if (!connect(area,SIGNAL(needUpdateStatus()),this,SLOT(updateStatusBar())))

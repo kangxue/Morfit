@@ -46,6 +46,9 @@ private slots:
 
 	void showConfig(bool);
 
+
+	void flipEditMode(bool checked);
+	
 	//show things you want
 	void showCutRadii(bool) ;
 

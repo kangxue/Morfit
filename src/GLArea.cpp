@@ -990,7 +990,7 @@ QString GLArea::get_operating_state_of_qstring(){
 		statesofstring="[Start]: Press \'I\' to intialize morfit sweeper. Press \'E\' to edit the skeleton... ";
 		break;
 	case skelEditState:
-		statesofstring="[Skeleton]: Press \'E\' again to exit. ";
+		statesofstring="[Skeleton]: Press \'E\' again to exit. Ctrl+Z to undo. Ctrl+Y to redo.";
 		break;
 	case profEditMode:
 		statesofstring=".....";

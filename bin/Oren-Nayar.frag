@@ -46,9 +46,9 @@ void main()
 
 	// light vector
 	//vec3 L = normalize(gl_LightSource[0].position.xyz - vpos);
-	//vec3 L = normalize(vec3(-1,10,2 ) - vpos);     // right, up, front
+	//vec3 L = normalize(vec3(-1,2,2 ) - vpos);     // right, up, front
 	
-	vec3 L = normalize(vec3(0,2,1) - vpos);  
+	vec3 L = normalize(vec3(0,0,1) - vpos);  
 	//vec3 L = normalize(vec3(1,1,0.1) - vpos);  
 	//vec3 L = normalize(vec3(-0.5,1,0.1) - vpos);  // stump
 	
@@ -85,7 +85,7 @@ void main()
 	gl_FragColor  = ambient + kd * irradiance * 
 		(A + B * angleDiff * sin(alpha) * tan(beta));
 	
-	gl_FragColor[3] =  1- (gl_FragColor[0] + gl_FragColor[1] + gl_FragColor[2])/6;
+	gl_FragColor[3] =  1 - (gl_FragColor[0] + gl_FragColor[1] + gl_FragColor[2])/4;
 
 	
 }

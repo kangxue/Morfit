@@ -332,7 +332,7 @@ void skelpath::addPointInJoints(std::vector<Point3f> ptscld,std::vector<Point3f>
 		int tempbid=0;
 		int tempbpid=0;
 		bool found=false;
-		float mindisTojoint=0.03;
+		float mindisTojoint=0.02;
 		for(int bid=0;bid<smoothedBrchPts.size() && found==false;bid++){
 			for(int bpid=0;bpid<smoothedBrchPts[bid].size() && found == false;bpid++){
 				if((smoothedBrchPts[bid][bpid]-allJoints[jid]).Norm()<mindisTojoint){

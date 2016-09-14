@@ -1,0 +1,6 @@
+{
+  "name": "Morfit",
+  "tagline": "Interactive Surface Reconstruction from Incomplete Point Clouds with Curve-Driven Topology and Geometry Control",
+  "body": "# Morfit is an interactive surface reconstruction software described in the paper:\r\n\r\n[K. Yin, H. Huang, H. Zhang, M. Gong, D. Cohen-or, B. Chen. Morfit: Interactive Surface Reconstruction from Incomplete Point Clouds with Curve-Driven Topology and Geometry Control. ACM Transactions on Graphics 33(6)(Proc.SIGGRAPH ASIA 2014 )](http://vcc.szu.edu.cn/research/2014/Morfit/)\r\n\r\n\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}

@@ -1,4 +1,4 @@
-Please read "morfit_manual.pdf" for details.
+Please read "morfit_doc.pdf" for details.
 
 =================
 Morfit is an interactive surface reconstruction software described in the paper:
